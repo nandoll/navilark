@@ -1,0 +1,21 @@
+//- Declaration
+mixin greetings(title, desc, image)
+    
+  //- Imagen decorativa
+  .row.no-padding
+    .col
+      .lark-bg.lark-bg_left
+    //- 227px
+    .col-8.col-md-4.lark-pad
+      //- Título de pregunta  
+      .row.justify-content-md-center.lark-greeting
+        //-Título de la pregunta
+        .col-12
+          .lark-greeting_title
+            .lark-greeting_title_first=title
+            .lark-greeting_title_desc=desc
+      img(src=image, alt="Momentos Navilark").img-fluid.mx-auto.d-block
+                 
+    
+    .col
+      .lark-bg.lark-bg_right

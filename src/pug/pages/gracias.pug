@@ -1,0 +1,23 @@
+extends ../config/template
+include ../survey/greetings
+append config
+  -pageTitle = 'Momentos navilark'
+  -pageDescription = 'Gracias, para participar debes compartir en tu muro'
+  -pageImage = 'https://navidad.ladrilloslark.com.pe/assets/img/gracias.png'
+  //- Textos de la primera pregunta
+  -qbg1= 'assets/img/survey-end.png'  
+  -qTitle1 = 'Gracias'
+  -qTitle2 = 'Para participar compártelo en tu muro'
+  -toplogo = 'assets/img/titular-navilar-app.png'
+
+block main
+  .lark.lark-main
+      .container-fluid
+        .row.justify-content-md-center
+          //- Logo superior
+          .col.col-md-4
+            //- para colocar el baner superior en movil
+            .lark-banner.lark-banner_sm.lark_banner_md
+              img(src=toplogo, alt="navilark").img-fluid
+        .lark-greeting
+          +greetings(qTitle1, qTitle2,  qbg1)

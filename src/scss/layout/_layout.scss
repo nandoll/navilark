@@ -1,0 +1,185 @@
+.lark{
+    height: 100vh;
+    &-main{
+        background-image: url('../assets/img/m-bg.png') ;  
+        background-size: cover;          
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+    @include media-breakpoint-up(md) {
+
+        &-main{            
+            background-image: url('../assets/img/bg.png');                      
+        }
+    }
+
+    &-progress{
+        margin: 1em 0;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+        grid-gap: 10px;
+        
+    }
+    &-title{
+        display:flex;        
+        align-items: center;
+        color: white;
+        padding: .5em;
+        
+        &_green{
+            background-color: green;                    
+        }
+
+        //Tamaños aplicados al título de la pregunta
+        &_first{
+            font-size:1.45rem;                        
+        }            
+        //Aplicar color cuando está sobre
+        
+    }
+    &-question{
+        padding-left: 25px;
+        cursor: pointer;
+        &:hover{
+            background-color: red;                    
+        }
+    }
+
+    &-bg{
+        height: 90%;                        
+        background-size: cover;
+        position: relative;
+
+        &_left{
+            background-image: url('../assets/img/bg-left.png') ;  
+            background-size: cover;          
+            background-repeat: no-repeat;
+            background-position-x: 100%;            
+            
+        }
+        @include media-breakpoint-up(xl) {
+
+            &_left:before{
+                content:'';
+                background-image: url('../assets/img/bg-left-deco.png'); 
+                background-size: contain;     
+                background-repeat: no-repeat; 
+                position: absolute;
+                top:-37px;
+                left: 0;
+                width: 80%;
+                height: 100%;            
+            }
+        }
+        
+        &_right{
+            background-image: url('../assets/img/bg-right.png');
+            background-size: cover;             
+            background-repeat: no-repeat;
+            
+        }
+        @include media-breakpoint-up(xl) {
+
+            &_right:before{
+                content:'';
+                background-image: url('../assets/img/bg-right-deco.png'); 
+                background-size: contain;     
+                background-repeat: no-repeat; 
+                position: absolute;
+                top:-37px;
+                right: 0;
+                width: 80%;
+                height: 100%;            
+            }
+        }        
+    }    
+    //  Para los tabs
+    &-tab{
+      display: none
+    }
+    //Para el muñequito
+    &-toy{
+        margin: -30px 2.3em 0;    
+    }
+    &-pad{
+      margin: -30px .8em 0;
+    }
+    @include media-breakpoint-up(md) {
+        &-toy img, &-pad img{
+            height: 250px;
+        }
+    }
+
+    //Formulario de registro
+
+    &-register{
+      &_form{
+
+        // display: none;
+
+      }
+      &_message h1{
+        
+        position: relative;
+        color: white;
+        opacity: 0;
+        transition: .8s ease-in-out;
+      }
+    }
+
+
+    //Finalizar la encuesta
+
+    &-greeting{
+
+      &_title{
+        color: green;
+        line-height: 4rem;
+        text-align: center;
+        text-transform: uppercase;
+
+        &_first{
+          font-size: 4em;
+          font-weight: 700;
+
+        }
+        
+        &_desc{
+          font-size: 1.5em;
+          font-size: 1.6em;
+          font-weight: 500;
+          line-height: 2rem;
+          letter-spacing: -1px;
+          
+        }
+
+      }
+
+    }
+
+    &-modal{
+       &_sigin{
+        display: flex;
+        flex-direction: column;
+        margin-top: -50%;
+        
+       }
+    }
+
+    // Almost
+    &-almost{
+      display: grid;
+      justify-content: center;
+      & p {
+        color: white;
+        text-align: center;
+        font-size: 1.2rem;
+
+      }
+    }
+
+    
+    
+}
+

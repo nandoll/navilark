@@ -1,0 +1,29 @@
+//- Declaration
+mixin survey(title, image, radioName, ...radioValues )
+  
+  //- Título de pregunta
+  .lark-tab
+    .row.mt-38.justify-content-md-center
+      //-Título de la pregunta
+      .col.col-md-4
+        .lark-title.lark-title_green
+          h1.lark-title_first=title
+    
+    //- Imagen decorativa
+    .row.no-padding
+      .col
+        .lark-bg.lark-bg_left
+      //- 227px
+      .col-5.col-md-4.lark-toy
+        img(src=image, alt="Momentos Navilark").img-fluid.mx-auto.d-block
+      
+      .col
+        .lark-bg.lark-bg_right
+    
+    //- Contenido de Preguntas
+    .row.justify-content-md-center
+      .col.col-md-4
+        each value in radioValues
+          label.lark-title.lark-title_green.lark-question
+            input(type="radio" name=radioName value=value)
+            span.lark-question_opt=value

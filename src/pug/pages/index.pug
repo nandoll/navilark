@@ -1,0 +1,93 @@
+extends ../config/template
+include ../survey/questions
+append config
+  -pageTitle = 'Momentos Navilark'
+  -pageDescription = 'Pagina inicial de navilark'
+  -pageImage = 'https://ed.team/sites/default/files/EDboilerplate-logo.png'
+  
+  -toplogo = 'assets/img/titular-navilar-app.png'
+  -qbg1= 'assets/img/qbg-lark-1.png'
+  //- Textos de la primera pregunta
+  -qTitle1 = 'Un pata del barrio te invita llevar regalos a un albergue...'
+  -qAnswer1_1 = 'Le pasas la voz a tus familiares para juntar varios regalos y llevarlos.'
+  -qAnswer1_2 = 'Le deseas suerte ya que esos lugares son medio peligrosos.'
+  -qAnswer1_3 = 'Pides por los niños a Papá Noel para que él les lleve los regalos.'
+  //- Textos de la segunda pregunta
+  -qTitle2 = 'La familia crea un grupo en WhatsApp que se llama: "Preparando la navidad"...'
+  -qAnswer2_1 = 'Te sales porque ese grupo no es de chistes, todo será tareas.'
+  -qAnswer2_2 = 'Envías la foto del Grinch con el mensaje: "Por favor no molestar" y te sales.'
+  -qAnswer2_3 = 'Pones carita feliz y sugieres actividades para pasar una Noche Buena inolvidable!'
+  //- Textos de la tercera pregunta
+  -qTitle3 = 'Sacas los adornos de la navidad para decorar la casa y al probar las luces, estas no prenden...'
+  -qAnswer3_1 = 'Igual las pones y esperas a ver si el niño hace el milagro de arreglarlas.'
+  -qAnswer3_2 = 'Reniegas y buscas al culpable de haberlas guardado mal, sin darte cuenta que fuiste tú.'
+  -qAnswer3_3 = 'Sales al toque a arreglarlas o comprar unas nuevas porque el árbol sin luces, no tiene chiste.'
+  //- Textos de la cuarta pregunta
+  -qTitle4 = 'Tu vecino es un "Loquito Navidad" y acaba de poner villancicos a todo volumen en su casa...'
+  -qAnswer4_1 = 'Pones una canción de Metallica a todo volumen con el parlante en la ventana.'
+  -qAnswer4_2 = 'Te hace acordar que aún no has decorado tu casa y te motivas a hacerlo.'
+  -qAnswer4_3 = 'Llamas a Serenazgo porque simplemente esa música no la aguantas.'
+  //- Textos de la quinta pregunta
+  -qTitle5 = 'Estás de compras y ves unos gorritos de Papá Noel especiales para mascotas...'
+  -qAnswer5_1 = 'Piensas, que buen negocio cómo no se me ocurrió.'
+  -qAnswer5_2 = 'Al toque compras uno para Firulais. Y si no tienes mascota, piensas lo chévere que hubiese sido comprarle uno.'
+  -qAnswer5_3 = 'Piensas: "¿La gente no tiene en que gastar?".'
+  
+  //- modal
+  -modalImage = 'assets/img/casi.png'
+block main
+  //- include ../includes/main-menu
+  .lark.lark-main
+    .container-fluid
+      .row.justify-content-md-center
+        //- Logo superior
+        .col.col-md-4
+          //- para colocar el baner superior en movil
+          .lark-banner.lark-banner_sm.lark_banner_md
+            img(src=toplogo, alt="navilark").img-fluid
+      form(action="summary.html" method="GET")#navilark.lark-app
+        +survey(qTitle1, qbg1, "q1", qAnswer1_1, qAnswer1_2, qAnswer1_3)
+        +survey(qTitle2, qbg1, "q2", qAnswer2_1, qAnswer2_2, qAnswer2_3)
+        +survey(qTitle3, qbg1, "q3", qAnswer3_1, qAnswer3_2, qAnswer3_3)
+        +survey(qTitle4, qbg1, "q4", qAnswer4_1, qAnswer4_2, qAnswer4_3)
+        +survey(qTitle5, qbg1, "q5", qAnswer5_1, qAnswer5_2, qAnswer5_3)
+        .row.justify-content-md-center        
+          .col.col-md-4
+            .lark-control
+              .row
+                .col
+                  .button.button-survey.up#prevBtn atras
+                .col          
+                  .button.button-survey.up.aqua#nextBtn Continuar
+        .row.justify-content-md-center
+          .col.col-md-4
+            .lark-progress
+              div.step 1
+              div.step 2
+              div.step 3
+              div.step 4
+              div.step 5
+  //- .lark-register_pop#openModal
+  //-   form(method="post")#SigninForm
+  //-     input(type="text" name="user" placeholder="Nombres y Apellidos")
+  //-     input(type="email" name="email" placeholder="Correo electrónico")
+  //-     input(type="text" name="movile" placeholder="Número de contacto")
+  //-     input(type="text" name="dni" placeholder="DNI")
+  //-     input(type="submit")#sendModal
+  //-     input(type="hidden" name="send_signin")
+  .lark-register.container-fluid.hide
+    .lark-modal_sigin
+      .lark-almost
+        img(src=modalImage, alt="Momentos Navilark" style="width:40%").img-fluid.mx-auto.d-block  
+        p ¡Muy bien! ahora por favor, completa tu información.
+      #progress
+      .center
+        #register        
+          i#previousButton.ion-android-arrow-back
+          i#forwardButton.ion-android-arrow-forward
+          #inputContainer
+            input(required autofocus)#inputField
+            label#inputLabel
+            #inputProgress
+        .lark-register_message
+

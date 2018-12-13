@@ -1,0 +1,58 @@
+//Margenes negativos a demanda
+.mt-38{
+    margin-top: -38px;
+}
+.mt-10{
+    margin-top: -10px;
+}
+//Bordes guia
+.border-red{
+    border: 1px solid red;
+}
+
+//Sin borde
+.no-padding {      
+    > .col,
+    > [class*="col-"] {
+      padding: 1em 0
+    }
+  }
+
+.up{
+    text-transform: uppercase;
+}
+.active-radio{
+    background-color: red;
+}
+
+.step{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    color: #b9b9c3;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #2dbe82;
+    font-weight: 500;
+}
+.active{
+    background-color: #2dbe82;
+    color: white;
+}
+.finish{
+    border: 1px solid #b9b9c3;
+
+}
+.hide{
+  display: none;
+}
+
+.navilark-pop{
+  color: white;
+  text-align:center;
+}
+.navilark-pop_text{
+  color: white;
+  text-align:center;
+
+}
